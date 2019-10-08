@@ -1,0 +1,85 @@
+body {
+    background: #fff;
+    font-family: sans-serif;
+}
+
+.links {
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+h1:hover {
+    cursor: pointer;
+}
+
+h1::before {
+    content: "🌕  ";
+    animation: moon .7s infinite;
+}
+
+h1:hover::before {
+    animation: moon .3s infinite;
+}
+
+.links a {
+    display: block;
+    width:100%;
+    padding: 5px 0;
+    transition: all .1s;
+    text-decoration: none;
+    color: #000;
+}
+
+.links a:hover {
+    background: #a4a4a4;
+    color: #fff;
+}
+
+.links a:before {
+    content: "😺 ";
+    margin: 0 10px;
+    display: inline-block;
+    transition: all .2s;
+    z-index: -111;
+    pointer-events: none;
+}
+
+.links a:hover:before {
+    /* content: "😽 "; */
+    animation: cat .5s infinite;
+    transform: scale(20) rotate(360deg) translate(50%, 50%);
+    opacity: 0.4;
+}
+
+@keyframes moon {
+    0% {
+        content: "🌖 ";
+    }
+    16% {
+        content: "🌗 ";
+    }
+    33% {
+        content: "🌘 ";
+    }
+    50% {
+        content: "🌑 ";
+    }
+    66% {
+        content: "🌒 ";
+    }
+    83% {
+        content: "🌓 ";
+    }
+    100% {
+        content: "🌔 ";
+    }
+}
+
+@keyframes cat {
+    0% {
+        content: "😺 ";
+    }
+    50% {
+        content: "😽 ";
+    }
+}
